@@ -21,7 +21,7 @@ public class GainTechniques : MonoBehaviour
     public float minGain = 1;
     public float maxGain = 3;
     public float halfRotation = 90;
-    public float CurrentGain = 0;
+    public float CurrentGain = 1;
     public float VirtualAngle = 0;
 
 
@@ -45,7 +45,7 @@ public class GainTechniques : MonoBehaviour
             switch (Technique)
             {
                 case GainTechniquesEnum.constant:
-                    gain = ConstantGain;
+                    gain = CurrentGain;
                     break;
                 case GainTechniquesEnum.dynamic:
                     gain = RotationTechniques.dynamicNonLinearGain(WordObjectScriptObject.transform.eulerAngles.y, minGain, maxGain, halfRotation);
